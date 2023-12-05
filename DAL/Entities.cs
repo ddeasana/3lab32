@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 
 
+
 namespace DAL
 {
     [JsonDerivedType(typeof(Entity), typeDiscriminator: "base")]

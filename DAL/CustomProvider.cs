@@ -3,6 +3,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DAL
 {
+#pragma warning disable SYSLIB0011
     public class CustomProvider<T> : IProvider<T> where T : class
     
     {
