@@ -30,6 +30,7 @@ namespace DAL
         {
             using (FileStream fileStream = new(FileName, FileMode.OpenOrCreate))
             {
+                fileStream.SetLength(0); // Fixes issue with deleting nodes
                 JsonSerializer.Serialize<List<T>>(fileStream, listToSave, options);
             }
         }
