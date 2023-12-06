@@ -35,27 +35,27 @@ namespace BLL
         public string[] AvailableDBTypes => db.AvailableDBTypes;
         public static void ValidateName(string? name)
         {
-            if (name == null || !Regex.Match(name, @"^\p{L}{1,32}$", RegexOptions.IgnoreCase).Success) throw new ArgumentException();
+            if (name == null || !Regex.Match(name, @"^\p{L}{1,32}$", RegexOptions.IgnoreCase).Success) throw new WrongInputException();
         }
         public static void ValidateID(string? id)
         {
-            if (id == null || !Regex.Match(id, @"^KB\d{8}$", RegexOptions.IgnoreCase).Success) throw new ArgumentException();
+            if (id == null || !Regex.Match(id, @"^KB\d{8}$", RegexOptions.IgnoreCase).Success) throw new WrongInputException();
         }
         public static void ValidateCourse(int? course)
         {
-            if (course < 1 || course > 6) throw new ArgumentException();
+            if (course < 1 || course > 6) throw new WrongInputException();
         }
         public static void ValidateMark(int? mark)
         {
-            if (mark < 0 || mark > 5) throw new ArgumentException();
+            if (mark < 0 || mark > 5) throw new WrongInputException();
         }
         public static void ValidateCountry(string? country)
         {
-            if (country == null || !Regex.Match(country, @"^(\p{L}| |-){1,32}$", RegexOptions.IgnoreCase).Success) throw new ArgumentException();
+            if (country == null || !Regex.Match(country, @"^(\p{L}| |-){1,32}$", RegexOptions.IgnoreCase).Success) throw new WrongInputException();
         }
         public static void ValidateNumberOfTheScoreBook(string? number)
         {
-            if (number == null || !Regex.Match(number, @"^\d{6}$", RegexOptions.IgnoreCase).Success) throw new ArgumentException();
+            if (number == null || !Regex.Match(number, @"^\d{6}$", RegexOptions.IgnoreCase).Success) throw new WrongInputException();
         }
         public List<Tuple<int, Student>> Search()
         {

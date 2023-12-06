@@ -72,7 +72,7 @@ namespace PL
                         try
                         {
                             int parsed = Convert.ToInt32(i);
-                            if (parsed < 1 || parsed > list.Length()) throw new ArgumentException();
+                            if (parsed < 1 || parsed > list.Length()) throw new WrongInputException();
                             ViewEntity(parsed - 1);
                             done = true;
                             return;
